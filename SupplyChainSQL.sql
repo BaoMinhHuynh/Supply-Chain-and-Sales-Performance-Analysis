@@ -1,4 +1,4 @@
-d:\Telecom-project\README.md-- Key Analytical Questions
+-- Key Analytical Questions
 -- 1. What are the total sales, total profit, and profit margin across the entire dataset?
 SELECT
 	EXTRACT(YEAR from order_date) AS year,
