@@ -20,12 +20,12 @@ Datasource: [Sales & Delivery Data](https://mazhocdata.tv/showcase/)
 
 ## File structure:
 
-- [Data Understanding.xlsx](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Data%20Understanding.xlsx) : This file contains complete descriptive information for all data fields in the dataset.
-- [rfm_mapping.xlsx](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Data%20Understanding.xlsx) : Contains the RFM score mapping used for customer segmentation.
-- [Supply Chain Dashboard_New.pdf](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Telecom%20Customer%20Churn.pdf) : This is PowerBI report.
-- [Supply Chain Dashboard.pdf](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Telecom%20Customer%20Churn.pdf) : An exported version of the dashboard for easier viewing and sharing without requiring Power BI.
-- [Analysis Report.pdf](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Telecom%20Customer%20Churn.pdf) : Summarizes key insights and business recommendations derived from the analysis.
-- [SupplyChainSQL.sql](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Telecom_customer_churn_analysis.ipynb) : Used for exploratory data analysis (EDA) and answering key analytical questions.
+- [Data Understanding.xlsx](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/Data%20Understanding.xlsx) : This file contains complete descriptive information for all data fields in the dataset.
+- [rfm_mapping.xlsx](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/rfm_mapping.xlsx) : Contains the RFM score mapping used for customer segmentation.
+- [Supply Chain Dashboard_New.pbix](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/Report%20and%20Data%20Viz/Supply%20Chain%20Dashboard_New.pbix) : This is PowerBI report.
+- [Supply Chain Dashboard.pdf](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/Report%20and%20Data%20Viz/Supply%20Chain%20Dashboard.pdf) : An exported version of the dashboard for easier viewing and sharing without requiring Power BI.
+- [Analysis Report.pdf](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/Report%20and%20Data%20Viz/Analysis%20Report.pdf) : Summarizes key insights and business recommendations derived from the analysis.
+- [SupplyChainSQL.sql](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/SupplyChainSQL.sql) : Used for exploratory data analysis (EDA) and answering key analytical questions.
 
 ## Tech Stack:
 
@@ -35,43 +35,64 @@ Datasource: [Sales & Delivery Data](https://mazhocdata.tv/showcase/)
 
 ## EDA and Dashboard Development using SQL and Power BI
 
-I will highlight some key points in this project, you can find more detail in [Analysis Report.pdf](https://github.com/BaoMinhHuynh/Telecom-project/blob/main/Telecom-customer-analyst-project/Data%20Understanding.xlsx)
+I will highlight some key points in this project, you can find more detail in [Analysis Report.pdf](https://github.com/BaoMinhHuynh/Supply-Chain-and-Sales-Performance-Analysis/blob/main/Report%20and%20Data%20Viz/Analysis%20Report.pdf)
+
+### 📊 Key Dashboards & Insights
 
 ### Overview
 
-![Overview](/Telecom-customer-analyst-project/assets/Dashboard_2.png)
+![Overview](/assets/Overview.png)
 
-- **Critical Churn Rate:** Despite strong total revenue ($21.3M), the churn rate is alarmingly high at ~26.5%.
+### 1. Sales Performance
 
-- **Ineffective Promotions:** The majority of revenue comes from customers with "No Offer" ($11.35M). Current promotional offers (especially C, D, and E) are underperforming and generating minimal returns.
+![sales](/assets/RevenueYOY.png)
 
-- **Core Customer Profile:** The business is driven by married customers (64% of revenue).
+**YTD Revenue** reached $733.22K, representing a **20.36% YoY growth**.
 
-### Total Charges Vs Total Revenue
+Revenue shows strong seasonality, **peaking in November** (> $80K) while **April–May underperformed** compared to the previous year.
 
-![DB4](/Telecom-customer-analyst-project/assets/Dashboard_4.png)
+Regional growth was driven by **West (+33.42%)** and South (+31.30%), while **Central (-0.22%)** remained stagnant.
 
-### Churned Overall
+### 2. Product Performance
 
-![DB5](/Telecom-customer-analyst-project/assets/Dashboard_5.png)
+![product](/assets/RevenueProduct.png)
 
-### Churned by Customer Status and Tenure Category
+**Phones** generated the **highest revenue** ($105K), while **Copiers** delivered the **highest profit** ($25K YTD).
 
-![DB6](/Telecom-customer-analyst-project/assets/Dashboard_6.png)
+**Appliances** recorded the **fastest growth** (+64.78%).
 
-### Churned Reason: Competitor made better Offer by Offer
+**Envelopes (-28.57%)** and **Machines (-22.11%)** experienced significant declines.
 
-![DB8](/Telecom-customer-analyst-project/assets/Dashboard_8.png)
+The drop in **Machines** is largely linked to extremely **long delivery times (41 days)**, reducing competitiveness and increasing operational costs.
 
-### Conclusion
+### 3. Customer & RFM Analysis
 
-![DB14](/Telecom-customer-analyst-project/assets/Dashboard_14.png)
+![customer](/assets/Customer.png)
+
+Average revenue per customer: $2.90K
+
+Average order frequency: 6.32 orders per customer
+
+**Customer acquisition** has steadily **declined** since 2015, suggesting a growing reliance on existing customers.
+
+Customer Segmentation (RFM):
+
+**Loyal Customers and Big Spenders** contribute the **majority of revenue** (~$1.09M).
+
+However, around $438K revenue is associated with **high churn-risk segments** such as **Losing Big Spenders and Losing Loyal Customers**.
+
+### 4. Operational Insights
+
+![operational](/assets/ReturnedRate.png)
+
+**Return Rate increased 14.59% YoY**, reaching 8.73%.
+
+**Average delivery time** rose to **35.02 days**, indicating potential **logistics inefficiencies and quality control issues**.
 
 ### Recommendations
 
-- Offer Benefits Review
-- Continuation of older offers
-- Marketing Scheme for Offers
-- Reward Programs
-- Choice of High-Quality Devices Offered
-- Training programs for support staff
+**Sales**: Prioritize marketing investment in high-margin products (Copiers & Accessories) and investigate the stagnant performance in the Central region.
+
+**Operations**: Audit logistics processes in the West region (17.35% return rate) and set a KPI to reduce average delivery time to under 20 days.
+
+**Marketing**: Launch a targeted win-back campaign for “Losing Big Spenders” and increase customer acquisition efforts to stabilize new customer growth.
